@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Бренд и переключатель сгруппированы для лучшего отображения на мобильных устройствах -->
+    <div class="navbar-header">
+
+  <h4>Категории</h4>
+  <ul>
+    {% for category in categories %}
+      <li>
+        <a href="/category/{{ category.id }}">{{ category.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  </div>
+
+  </div>
+
+</nav>

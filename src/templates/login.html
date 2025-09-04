@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Вход{% endblock %}
+{% block content %}
+<h2>Войти</h2>
+<form method="post" action="/login">
+    <div class="form-group">
+
+    <label>Логин: <input type="text" name="email"></label><br>
+    <label>Пароль: <input type="password" name="password"></label><br>
+    <button type="submit">Войти</button>
+    </div>
+</form>
+{% endblock %}

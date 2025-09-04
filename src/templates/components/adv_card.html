@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-body">
+  <h3>{{ advert.content }}</h3>
+  <p>{{ advert.description }}</p>
+  <p>Категория: {{ advert.category_name }}</p>
+  <p>Цена: {{ advert.price }} ₽</p>
+  <p>Дата и время создания объявления: {{ advert.date_created }}</p>
+
+
+  {% if user %}
+    <p>Продавец: {{ advert.seller_name }}</p>
+
+    <div class="advert-actions">
+      {% if advert.is_favorite %}
+        <form action="/unlike/{{ advert.id }}" method="post">
+          <button type="submit">Unlike</button>
+        </form>
+      {% else %}
+        <button class="favorite-btn">Добавить в избранное</button>
+      {% endif %}
+
+      {% if advert.is_bought %}
+        <span class="bought-label">Уже куплено</span>
+      {% else %}
+        <button class="buy-btn">Купить</button>
+      {% endif %}
+
+      {% if advert.is_created %}
+        <button class="buy-btn">Удалить</button>
+        <button class="buy-btn">Редактировать</button>
+      {% endif %}
+
+    </div>
+  {% endif %}
+    </div>
+</div>

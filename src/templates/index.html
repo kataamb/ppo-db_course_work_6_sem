@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+
+<div class="container">
+  <aside class="sidebar">
+    {% include "components/category_list.html" %}
+  </aside>
+
+<h2>Объявления</h2>
+
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for advert in adverts %}
+        {% include "components/adv_card.html" %}
+    {% else %}
+        <p>Пока нет объявлений</p>
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}

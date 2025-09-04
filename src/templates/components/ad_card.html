@@ -1,0 +1,13 @@
+<div class="ad-card">
+    <h3>{{ ad.title }}</h3>
+    <p><small>Создано: {{ ad.created_at }}</small></p>
+    <p>{{ ad.content }}</p>
+
+    {% if user %}
+        <div class="actions">
+
+        </div>
+    {% else %}
+        <p><a href="/login">Войдите</a>, чтобы добавить в избранное или купить</p>
+    {% endif %}
+</div>
